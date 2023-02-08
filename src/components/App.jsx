@@ -9,14 +9,12 @@ export class App extends Component {
     bad: 1,
   };
 
-  
-  buttonFeedback = (option) => {
-    this.setState(state => {
-      return {state[option]:state[option]+1};
+  buttonFeedback = option => {
+    this.setState(prevState => {
+      return { option: prevState.value + 1 };
     });
   };
 
- 
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -42,7 +40,7 @@ export class App extends Component {
           <Section title={'Please leave feedback'} />
           <FeedbackOptions
             options={Object.keys(this.state)}
-            onLeaveFeedback={this.buttonFeedback }
+            onLeaveFeedback={this.buttonFeedback}
           />
           <Statistics
             data={this.state}
