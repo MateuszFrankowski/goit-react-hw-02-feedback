@@ -8,13 +8,11 @@ export class App extends Component {
     neutral: 1,
     bad: 1,
   };
-
   buttonFeedback = option => {
     this.setState(prevState => {
-      return { option: prevState.value + 1 };
+      return { [option]: prevState.value + 1 };
     });
   };
-
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -24,7 +22,6 @@ export class App extends Component {
     );
   };
   render() {
-    console.log(Object.keys(this.state), 'elo');
     return (
       <div
         style={{

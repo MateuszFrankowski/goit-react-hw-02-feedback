@@ -5,11 +5,14 @@ import React, { Component } from 'react';
 export class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
-    console.log('options', options);
+    console.log('options', options, onLeaveFeedback);
     return (
       <div>
         {options.map(option => (
-          <button key={option} onClick={onLeaveFeedback(option)}></button>
+          <button
+            key={option}
+            onClick={option => onLeaveFeedback(option)}
+          ></button>
         ))}
       </div>
     );
