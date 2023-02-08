@@ -9,7 +9,7 @@ export class FeedbackOptions extends Component {
     return (
       <div>
         {options.map(option => (
-          <button key={option} onClick={option => onLeaveFeedback(option)}>
+          <button key={option} onClick={temp => onLeaveFeedback(option)}>
             {option}
           </button>
         ))}
