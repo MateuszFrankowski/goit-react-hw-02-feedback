@@ -1,7 +1,7 @@
 // import ProtoTypes from 'proto-types';
-import css from './feedback.module.css';
+import css from './Statistics.module.css';
 import React, { Component } from 'react';
-export class Feedback extends Component {
+export class Statistics extends Component {
   render() {
     const {
       data: { good, neutral, bad },
@@ -11,11 +11,13 @@ export class Feedback extends Component {
     return (
       <div className={css.profile}>
         <h2>Statistic</h2>
-        <h3>Good:{good}</h3>
-        <h3>Neutral:{neutral}</h3>
-        <h3>Bad:{bad}</h3>
-        <h3>Total:{total}</h3>
-        <h3>positive feedback:{positivePercentage}</h3>
+        <ul className={css['item-list']}>
+          <li>Good: {good}</li>
+          <li>Neutral: {neutral}</li>
+          <li>Bad: {bad}</li>
+          <li>Total: {total}</li>
+          <li>positive feedback: {positivePercentage}</li>
+        </ul>
       </div>
     );
   }

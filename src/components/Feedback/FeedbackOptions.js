@@ -1,0 +1,19 @@
+// import ProtoTypes from 'proto-types';
+import css from './FeedbackOptions.module.css';
+import React, { Component } from 'react';
+
+export class FeedbackOptions extends Component {
+  render() {
+    const { options, onLeaveFeedback } = this.props;
+    console.log('options', options);
+    return (
+      <div>
+        {options.map(option => (
+          <button key={option} onClick={this.onLeaveFeedback}>
+            {option}
+          </button>
+        ))}
+      </div>
+    );
+  }
+}
