@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 export class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
-    console.log('options', options, onLeaveFeedback);
     return (
       <div className={css.container}>
         {options.map(option => (

@@ -1,4 +1,5 @@
 import { Statistics } from './Feedback/Statistics.js';
+import { Notification } from './Feedback/Notification.js';
 import { FeedbackOptions } from './Feedback/FeedbackOptions.js';
 import { Section } from './Feedback/Section.js';
 import React, { Component } from 'react';
@@ -21,9 +22,12 @@ export class App extends Component {
       (this.state.good / this.countTotalFeedback()) * 100
     );
     const fedbackPercentage = !!value ? value : 0;
+
     return fedbackPercentage + '%';
   };
+
   render() {
+    const dataAvailable = !!this.countTotalFeedback();
     return (
       <div
         style={{
@@ -41,11 +45,14 @@ export class App extends Component {
             options={Object.keys(this.state)}
             onLeaveFeedback={option => this.buttonFeedback(option)}
           />
-          <Statistics
-            data={this.state}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
+          {dataAvailable && (
+            <Statistics
+              data={this.state}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          )}
+          {!dataAvailable && <Notification message={'There is no feedback'} />}
         </div>
       </div>
     );
