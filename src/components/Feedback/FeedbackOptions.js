@@ -7,10 +7,14 @@ export class FeedbackOptions extends Component {
     const { options, onLeaveFeedback } = this.props;
     console.log('options', options, onLeaveFeedback);
     return (
-      <div>
+      <div className={css.container}>
         {options.map(option => (
-          <button key={option} onClick={temp => onLeaveFeedback(option)}>
-            {option}
+          <button
+            className={css.btn}
+            key={option}
+            onClick={() => onLeaveFeedback(option)}
+          >
+            <span>{option}</span>
           </button>
         ))}
       </div>

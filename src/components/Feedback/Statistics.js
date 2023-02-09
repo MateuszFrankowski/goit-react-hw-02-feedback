@@ -10,7 +10,7 @@ export class Statistics extends Component {
     const { total } = this.props;
     return (
       <div className={css.profile}>
-        <h2>Statistic</h2>
+        <h2 className={css['statistic-title']}>Statistic</h2>
         <ul className={css['item-list']}>
           <li>Good: {good}</li>
           <li>Neutral: {neutral}</li>

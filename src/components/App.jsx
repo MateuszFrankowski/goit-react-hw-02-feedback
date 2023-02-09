@@ -10,7 +10,6 @@ export class App extends Component {
   };
   buttonFeedback = option => {
     this.setState(prevState => {
-      console.log('option', [option], 'prevState[option]', prevState[option]);
       return { [option]: prevState[option] + 1 };
     });
   };

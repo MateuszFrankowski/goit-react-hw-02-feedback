@@ -7,7 +7,7 @@ export class Section extends Component {
 
     return (
       <div className={css.profile}>
-        <h2>{title}</h2>
+        <h2 className={css.title}>{title}</h2>
         <ul className={css['item-list']}></ul>
       </div>
     );
