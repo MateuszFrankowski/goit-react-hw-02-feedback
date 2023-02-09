@@ -1,4 +1,4 @@
-// import ProtoTypes from 'proto-types';
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 import React, { Component } from 'react';
 export class Statistics extends Component {
@@ -22,3 +22,8 @@ export class Statistics extends Component {
     );
   }
 }
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+};

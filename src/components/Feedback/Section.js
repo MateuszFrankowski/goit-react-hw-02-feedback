@@ -1,4 +1,4 @@
-// import ProtoTypes from 'proto-types';
+import PropTypes from 'prop-types';
 import css from './Section.module.css';
 import React, { Component } from 'react';
 export class Section extends Component {
@@ -8,8 +8,10 @@ export class Section extends Component {
     return (
       <div className={css.profile}>
         <h2 className={css.title}>{title}</h2>
-        <ul className={css['item-list']}></ul>
       </div>
     );
   }
 }
+Section.propTypes = {
+  title: PropTypes.string,
+};

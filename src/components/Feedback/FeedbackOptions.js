@@ -1,4 +1,4 @@
-// import ProtoTypes from 'proto-types';
+import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 import React, { Component } from 'react';
 
@@ -20,3 +20,6 @@ export class FeedbackOptions extends Component {
     );
   }
 }
+Notification.FeedbackOptions = {
+  options: PropTypes.shape({}),
+};

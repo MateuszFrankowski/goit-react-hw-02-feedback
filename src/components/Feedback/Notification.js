@@ -1,4 +1,4 @@
-// import ProtoTypes from 'proto-types';
+import PropTypes from 'prop-types';
 import css from './Notification.module.css';
 import React, { Component } from 'react';
 export class Notification extends Component {
@@ -12,6 +12,6 @@ export class Notification extends Component {
     );
   }
 }
-// Notification.propTypes = {
-//   message: PropTypes.string,
-// };
+Notification.propTypes = {
+  message: PropTypes.string,
+};
